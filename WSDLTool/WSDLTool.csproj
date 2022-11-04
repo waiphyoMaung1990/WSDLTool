@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B2D13764-1246-4B59-A126-CD1D223D41F9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WSDLTool</RootNamespace>
+    <AssemblyName>WSDLTool</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Control.Draggable, Version=1.0.5049.269, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Control.Draggable.1.0.5049.269\lib\net35-Client\Control.Draggable.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\uc_Element.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\uc_Element.Designer.cs">
+      <DependentUpon>uc_Element.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\uc_Message.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\uc_Message.Designer.cs">
+      <DependentUpon>uc_Message.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\uc_PortType.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\uc_PortType.Designer.cs">
+      <DependentUpon>uc_PortType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Enums\PortType.cs" />
+    <Compile Include="Froms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Froms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Froms\PropertiesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Froms\PropertiesForm.Designer.cs">
+      <DependentUpon>PropertiesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\cls_Common.cs" />
+    <Compile Include="Helpers\ObjectType.cs" />
+    <Compile Include="Helpers\OperationType.cs" />
+    <Compile Include="Helpers\parts.cs" />
+    <Compile Include="Helpers\ucLists.cs" />
+    <Compile Include="Helpers\ucParamLists.cs" />
+    <Compile Include="Helpers\xsd.cs" />
+    <Compile Include="Popups\AddElement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popups\AddElement.Designer.cs">
+      <DependentUpon>AddElement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popups\AddExistingElement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popups\AddExistingElement.Designer.cs">
+      <DependentUpon>AddExistingElement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popups\AddMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popups\AddMessage.Designer.cs">
+      <DependentUpon>AddMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popups\AddPart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popups\AddPart.Designer.cs">
+      <DependentUpon>AddPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popups\AddParameter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popups\AddParameter.Designer.cs">
+      <DependentUpon>AddParameter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popups\AddPortType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popups\AddPortType.Designer.cs">
+      <DependentUpon>AddPortType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popups\AddPortTypeOperation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popups\AddPortTypeOperation.Designer.cs">
+      <DependentUpon>AddPortTypeOperation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popups\ShowElement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popups\ShowElement.Designer.cs">
+      <DependentUpon>ShowElement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controls\uc_Element.resx">
+      <DependentUpon>uc_Element.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\uc_Message.resx">
+      <DependentUpon>uc_Message.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\uc_PortType.resx">
+      <DependentUpon>uc_PortType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Froms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Froms\PropertiesForm.resx">
+      <DependentUpon>PropertiesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popups\AddElement.resx">
+      <DependentUpon>AddElement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popups\AddExistingElement.resx">
+      <DependentUpon>AddExistingElement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popups\AddMessage.resx">
+      <DependentUpon>AddMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popups\AddPart.resx">
+      <DependentUpon>AddPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popups\AddParameter.resx">
+      <DependentUpon>AddParameter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popups\AddPortType.resx">
+      <DependentUpon>AddPortType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popups\AddPortTypeOperation.resx">
+      <DependentUpon>AddPortTypeOperation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popups\ShowElement.resx">
+      <DependentUpon>ShowElement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resouces\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
